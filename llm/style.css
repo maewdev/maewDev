@@ -66,6 +66,9 @@
 }
 
 .dix {
+    align-items: center;
+  text-align: center;
+   width: 620px;
           position: absolute;
         top:0;
         bottom: 0;
