@@ -1,4 +1,3 @@
-
 .modal {
   position: fixed;
   left: 0;
@@ -47,6 +46,7 @@
 .modal .close_modal:hover {
   opacity: 0.9;
 }
+
 /*--------------------------*/
 .dialog {
   align-items: center;
@@ -61,24 +61,25 @@
   color: black;
   background-color: darkslategray;
   border-radius: 14px;
-  opacity:0.97; 
-  padding:5px;
+  opacity: 0.97;
+  padding: 5px;
 }
 
 .dix {
-    align-items: center;
-   width: 620px;
-          position: absolute;
-    left: 0;
-        right: 0;
-        margin: auto;
-    font-size: 14px;
+  align-items: center;
+  width: 620px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  margin: auto;
+  font-size: 14px;
   border: 2px solid #73AD21;
   color: black;
   background-color: darkslategray;
   border-radius: 14px;
-  opacity:0.97; 
-  padding:5px;
+  opacity: 0.97;
+  padding: 5px;
 }
 
 .button {
