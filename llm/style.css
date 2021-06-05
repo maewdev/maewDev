@@ -120,6 +120,7 @@
   background-color: #3b483b;
   border: 10px solid transparent;
 }
-.link_wrap .img {
-  background-color: #ffffff;
+.img_container {
+  background-color: #202720;
+  border: 10px solid transparent;
 }
