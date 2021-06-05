@@ -32,6 +32,7 @@
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .modal .close_modal {
@@ -69,12 +70,13 @@
 }
 
 .dix {
-    position: absolute;
+    position: relative;
     border: 2px solid #73AD21;
     background-color: darkslategray;
     border-radius: 14px;
     opacity: 0.97;
     padding: 5px;
+    margin: 0 auto;
 }
 
 .button {
