@@ -70,11 +70,10 @@
   text-align: center;
    width: 620px;
           position: absolute;
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
         margin: auto;
+    font-size: 14px;
+  border: 2px solid #73AD21;
+  color: black;
   background-color: darkslategray;
   border-radius: 14px;
   opacity:0.97; 
