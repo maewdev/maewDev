@@ -70,7 +70,7 @@
 }
 
 .dix {
-    position: relative;
+    position: absolute;
     border: 2px solid #73AD21;
     background-color: darkslategray;
     border-radius: 14px;
