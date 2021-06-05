@@ -69,19 +69,12 @@
 }
 
 .dix {
-  align-items: center;
-  width: 620px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
-  font-size: 14px;
-  border: 2px solid #73AD21;
-  color: black;
-  background-color: darkslategray;
-  border-radius: 14px;
-  opacity: 0.97;
-  padding: 5px;
+    position: absolute;
+    border: 2px solid #73AD21;
+    background-color: darkslategray;
+    border-radius: 14px;
+    opacity: 0.97;
+    padding: 5px;
 }
 
 .button {
