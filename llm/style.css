@@ -13,8 +13,8 @@
 }
 .close_modal {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -8px;
+  right: -8px;
   display: block;
   width: 40px;
   height: 40px;
@@ -23,11 +23,11 @@
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
-  background-image: url(https://www.freeiconspng.com/uploads/red-close-icon-40.png);
+  background-image: url(https://i.imgur.com/VBdx7Dh.png);
 }
 
 .close_modal:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .foot {
