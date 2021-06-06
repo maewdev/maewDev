@@ -1,6 +1,10 @@
 .w3-modal {
   z-index: 999;
 }
+.w3-modal-content {
+  width:620px;
+  
+}
 
 .head_logo {
   height: 100%;
@@ -26,6 +30,9 @@
   opacity: 0.9;
 }
 
+.foot {
+  font-size: 12px;
+}
 /*--------------------------*/
 .dialog {
   align-items: center;
