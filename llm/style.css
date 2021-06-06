@@ -3,7 +3,10 @@
 }
 .w3-modal-content {
   width:610px;
-  
+}
+
+.w3-container {
+    padding: 0px;
 }
 
 .head_logo {
