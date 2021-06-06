@@ -97,6 +97,7 @@
 .item {
   flex-basis: 25%;
   text-align: center;
+  padding:1.5px;
 }
 
 .link_wrap {
