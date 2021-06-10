@@ -35,14 +35,10 @@
   
   .foot {
     font-size: 12px;
-    
+    text-decoration: dotted;
   }
 
-  a.foot {
-    text-decoration: dotted;
-    
-  }
-  
+ 
   .button {
     background-color: #4caf50;
     border: none;
