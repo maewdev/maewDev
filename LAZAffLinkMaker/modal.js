@@ -100,7 +100,7 @@ javascript: (function () {
     html += '<div class="w3-container">' + pix + '</div>';
     html += title + sub_aff_id + sub_id1 + afflink;
     html += '<footer class="w3-container w3-indigo foot">' + version + '  ©️ by Mr.Sommanat <a class="foot" href="https://maewdev.netlify.app/lazafflinkmaker/" target="_new"> "maewDev"</a> </footer></div></div>';
-    html += '<script> function loadStyle(cssURL) { return new Promise(function (resolve, reject) { var link = document.createElement("link"); link.rel = "stylesheet"; link.href = cssURL; document.head.appendChild(link); link.onload = function () { resolve();}; }); }';
+    html += '<script> function loadStyle(cssURL) {return new Promise(function (resolve, reject) {let link = document.createElement("link");link.type   = "text/css";link.rel = "stylesheet";link.href = cssURL;link.onload = function () {resolve();};let headScript = document.querySelector("script");headScript.parentNode.insertBefore(link, headScript);});}';
 
     html += 'loadStyle("https://www.w3schools.com/w3css/4/w3.css");loadStyle("https://maewdev.netlify.app/LAZAffLinkMaker/style.css"); ';
 
