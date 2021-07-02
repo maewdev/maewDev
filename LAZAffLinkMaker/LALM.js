@@ -119,7 +119,7 @@
     function makeScript() {
         let modal = document.getElementById("LZModal");
         let newScript = document.createElement("script");
-        let inlineScript = document.createTextNode('function loadStyle(cssURL) {return new Promise(function(resolve, reject) {let link = document.createElement("link");link.type = "text/css";link.rel = "stylesheet";link.href = cssURL;link.onload = function() {resolve();};let headScript = document.querySelector("script");headScript.parentNode.insertBefore(link, headScript);});}loadStyle("https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css");loadStyle("https://maewdev.netlify.app/llm/style.css");var sub_aff_id_input = document.getElementById("sub_aff_id");var sub_id1_input = document.getElementById("sub_id1");var affLink_txt = document.getElementById("text_afflink");var afflink_html = affLink_txt.innerHTML;updateAfflink();function updateAfflink() {let sub_aff_id_value = sub_aff_id_input.value.trim().split(" ").join("_");sub_aff_id_value = sub_aff_id_value == "" ? "" : "&sub_aff_id=" + sub_aff_id_value;let sub_id1_value = sub_id1_input.value.trim().split(" ").join("_");sub_id1_value = sub_id1_value == "" ? "" : "&sub_id1=" + sub_id1_value;affLink_txt.innerHTML = afflink_html + sub_aff_id_value + sub_id1_value;}sub_aff_id_input.addEventListener("input",updateAfflink);sub_id1_input.addEventListener("input", updateAfflink);');
+        let inlineScript = document.createTextNode('function loadStyle(cssURL) {return new Promise(function(resolve, reject) {let link = document.createElement("link");link.type = "text/css";link.rel = "stylesheet";link.href = cssURL;link.onload = function() {resolve();};let headScript = document.querySelector("script");headScript.parentNode.insertBefore(link, headScript);});}loadStyle("https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css");loadStyle("https://maewdev.netlify.app/LAZAffLinkMaker/style.css");var sub_aff_id_input = document.getElementById("sub_aff_id");var sub_id1_input = document.getElementById("sub_id1");var affLink_txt = document.getElementById("text_afflink");var afflink_html = affLink_txt.innerHTML;updateAfflink();function updateAfflink() {let sub_aff_id_value = sub_aff_id_input.value.trim().split(" ").join("_");sub_aff_id_value = sub_aff_id_value == "" ? "" : "&sub_aff_id=" + sub_aff_id_value;let sub_id1_value = sub_id1_input.value.trim().split(" ").join("_");sub_id1_value = sub_id1_value == "" ? "" : "&sub_id1=" + sub_id1_value;affLink_txt.innerHTML = afflink_html + sub_aff_id_value + sub_id1_value;}sub_aff_id_input.addEventListener("input",updateAfflink);sub_id1_input.addEventListener("input", updateAfflink);');
         newScript.appendChild(inlineScript);
         modal.appendChild(newScript);
     }
@@ -171,4 +171,5 @@
     afflinkButton.addEventListener("click", function () {
         copyToClipboard(afflinkText.textContent, this.id);
     })
+    
 })();
