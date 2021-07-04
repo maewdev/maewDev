@@ -1,1 +1,178 @@
 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LAZ Aff Link Maker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="https://i.imgur.com/OHV33AM.png" type="image/x-icon">
+  <style>
+    textarea {
+      width: 100%;
+      height: 350px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      font-size: 16px;
+      resize: none;
+    }
+
+    .imgbg {
+      width: 50px;
+
+    }
+
+    .head img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .bookmarklet a {
+      /*  max-width: 100%;
+      max-height: 100%; */
+    }
+
+    .button {
+      padding: 5px 15px;
+      color: #fff;
+      background: #0aa09f;
+      -webkit-border-radius: 8px;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: inline-block;
+      overflow: visible;
+
+      border-width: 5px;
+    }
+
+    .info {
+      font-size: 1rem;
+      color: rgb(30, 6, 248);
+    }
+    .input_label {
+      font-size: 1.45rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-container" style="  max-width: 75%; margin: auto; ">
+
+    <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+
+      <div class="w3-center head">
+        <img src="https://i.imgur.com/yxhBPE3.png" title="😎LAZ Aff Link Maker">
+      </div>
+
+      <div class="w3-row w3-section w3-text-teal">
+
+        <div class="w3-col w3-margin-left" style="width:50px">
+          <img src="https://i.imgur.com/Ahld8JX.png" class="imgbg">
+        </div>
+        <div class="w3-col w3-margin-left" style="width:230px">
+          <span class="input_label">ชื่อ Bookamrklet:</span>
+          <input id="title-input" class="w3-input w3-border" type="text" placeholder="ชื่อ Bookamrklet"
+            value="😎LAZAffLinkMaker" oninput="updateTitle()">
+        </div>
+
+        <div class="w3-col w3-margin-left" style="width:50px">
+          <img src="https://i.imgur.com/skXuxpb.png" class="imgbg">
+        </div>
+        <div class="w3-rest">
+          <span class="input_label">Root Link Url:</span>
+          <input id="rootLinkUrl" class="w3-input w3-border" type="text" placeholder="Root Link Url" value=""
+            oninput="updateCode()">
+        </div>
+      </div>
+
+
+      <div class="w3-row w3-section w3-text-teal">
+        <div class="w3-col w3-margin-left" style="width:50%">
+          Code: <a href="https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js" target="_new"> (Source)</a>
+          <textarea id="code-textarea" disabled></textarea>
+        </div>
+
+        <div class="w3-col w3-margin-left" style="width:50px">
+          <img src="https://i.imgur.com/pF9I490.png" class="imgbg">
+        </div>
+
+        <div class="w3-rest">
+          <a id="bookmarklet-a" class="button " href="">bookmarklet</a>
+          <div class="info ">
+            <img src="https://i.imgur.com/33UIReT.png" style="width:100px;margin:10px;">
+            <br>ลากลิงก์ข้างบนนี้ ไปวางที่แถบ Bookmark ของ Browser
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <script>
+    var mainCode = "";
+    let l_script_url = "https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js";
+    fetch(l_script_url)
+      .then(
+        (successResponse) => {
+          if (successResponse.status != 200) {
+            return null;
+          } else {
+            return successResponse.text();
+          }
+        },
+        (failResponse) => {
+          return null;
+        }
+      )
+      .then((result) => {
+        console.log(result)
+        document.getElementById("code-textarea").innerHTML = result;
+        mainCode = result;
+        updateCode();
+      });
+
+    updateTitle();
+    
+    function isValidURL(string) {
+      var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+      return (res !== null)
+    };
+
+    function updateTitle() {
+      let title = document.getElementById("title-input").value.trim();
+      let link = document.getElementById("bookmarklet-a");
+      link.text = title;
+    }
+
+    function updateCode() {
+      let code = document.getElementById("code-textarea");
+      let link = document.getElementById("bookmarklet-a");
+      let rootLinkUrl = document.getElementById("rootLinkUrl").value.trim();
+      let rootLink=isValidURL(rootLinkUrl)?rootLinkUrl:"";
+      
+      let fin_code = mainCode.replace('const myAffRootLink = "";', 'const myAffRootLink ="' + rootLink + '";');
+      code.innerHTML = fin_code;
+      /* let output = "javascript:" + encodeURIComponent("(function(){" + cleanCode(code.value) + "})();"); */
+      let output = "javascript:" + ("(function(){" + fin_code + "})();");
+      code.innerHTML = output;
+      link.href = output;
+      console.log(fin_code)
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
