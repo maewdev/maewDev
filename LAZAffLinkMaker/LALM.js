@@ -1,3 +1,4 @@
+    
     const myAffRootLink = "";
     const version = "LAZ Aff link Maker version 2.0";
 
