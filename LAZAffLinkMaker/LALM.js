@@ -1,5 +1,5 @@
 (function () {
-    const myAffRootLink = "https://c.lazada.co.th/t/c.bVSyEc";
+    {{myAffRootLink}}
     const version = "LAZ Aff link Maker version 2.0";
 
     if ((window.location.hostname.search('lazada.co.th') < 0)) {
