@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -50,11 +49,16 @@
     }
 
     .info {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: rgb(30, 6, 248);
     }
+
     .input_label {
       font-size: 1.45rem;
+    }
+
+    .help {
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -105,22 +109,37 @@
           <div class="info ">
             <img src="https://i.imgur.com/33UIReT.png" style="width:100px;margin:10px;">
             <br>ลากลิงก์ข้างบนนี้ ไปวางที่แถบ Bookmark ของ Browser
+
           </div>
+          <img src="https://i.imgur.com/vhMeGCQ.gif" style="width:400px">
         </div>
       </div>
-
-
     </div>
+  </div>
 
+  <div class="w3-container" style="  max-width: 75%; margin: auto; ">
+    <div class="w3-container w3-card-4 w3-light-grey  w3-margin">
 
+      <div class="w3-panel w3-padding-16 w3-teal help ">LAZ Aff Link Maker คืออะไร ?</div>
+      <b>LAZ Aff Link Maker</b> คือ Bookmarklet สคริป สำหรับการสร้างลิงค์ affiliate จากเว็บ Lazada
 
+      <div class="w3-panel w3-padding-16 w3-teal help ">การติดตั้ง</div>
+      1. ใส่ชื่อ Bookamrklet<br>
+      2. ใส่ลิงก์ Root Link <br>
+      3. ลากลิงก์ (สีเขียว) ไปวางที่แถบ Bookmark ของ Browser <br>
+
+      <div class="w3-panel w3-padding-16 w3-teal help ">การใช้งาน</div>
+      1. ไปที่เว็บ https://www.lazada.co.th/ <br>
+      2. เลือกหน้าสินค้าที่ต้องการโปรโมต <br>
+      3. กดที่ Bookmarklet ที่แถบ Browser <br>
+      4. copy ค่า <b>Your Afﬁliate Link </b> ไปโปรโมท (สามารถนำไปย่อลิงก์ก่อนได้)
+    </div>
   </div>
 
 
-
   <script>
-    var mainCode = "";
-    let l_script_url = "https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js";
+    var mainCode = ""; /* Global variable */
+    const l_script_url = "https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js";
     fetch(l_script_url)
       .then(
         (successResponse) => {
@@ -135,16 +154,15 @@
         }
       )
       .then((result) => {
-        console.log(result)
         document.getElementById("code-textarea").innerHTML = result;
         mainCode = result;
         updateCode();
       });
 
     updateTitle();
-    
+
     function isValidURL(string) {
-      var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+      let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
       return (res !== null)
     };
 
@@ -158,20 +176,16 @@
       let code = document.getElementById("code-textarea");
       let link = document.getElementById("bookmarklet-a");
       let rootLinkUrl = document.getElementById("rootLinkUrl").value.trim();
-      let rootLink=isValidURL(rootLinkUrl)?rootLinkUrl:"";
-      
+      let rootLink = isValidURL(rootLinkUrl) ? rootLinkUrl : "";
+
       let fin_code = mainCode.replace('const myAffRootLink = "";', 'const myAffRootLink ="' + rootLink + '";');
       code.innerHTML = fin_code;
-      /* let output = "javascript:" + encodeURIComponent("(function(){" + cleanCode(code.value) + "})();"); */
-      let output = "javascript:" + ("(function(){" + fin_code + "})();");
+      /* let output = "javascript:" + encodeURIComponent("(function(){" + fin_code + "})();"); */
+      let output = "javascript:" + ("(function(){ \n" + fin_code + "})();");
       code.innerHTML = output;
       link.href = output;
       console.log(fin_code)
     }
-
-
-
-
   </script>
 </body>
 
