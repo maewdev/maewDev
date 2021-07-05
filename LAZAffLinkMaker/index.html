@@ -2,222 +2,240 @@
 <html>
 
 <head>
-  <title>LAZ Aff Link Maker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="shortcut icon" href="https://i.imgur.com/OHV33AM.png" type="image/x-icon">
-  <style>
-    textarea {
-      width: 100%;
-      height: 350px;
-      padding: 12px 20px;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      background-color: #f8f8f8;
-      font-size: 16px;
-      resize: none;
-    }
+    <title>LAZ Aff Link Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/OHV33AM.png" type="image/x-icon">
+    <style>
+        textarea {
+            width: 100%;
+            height: 350px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
 
-    .imgbg {
-      width: 50px;
+        .imgbg {
+            width: 50px;
 
-    }
+        }
 
-    .head img {
-      max-width: 100%;
-      max-height: 100%;
-    }
+        .head img {
+            max-width: 100%;
+            max-height: 100%;
+        }
 
-    .bookmarklet a {
-      /*  max-width: 100%;
-      max-height: 100%; */
-    }
+        .bookmarklet a {
+            /*  max-width: 100%;
+              max-height: 100%; */
+        }
 
-    .button {
-      padding: 5px 15px;
-      color: #fff;
-      background: #0aa09f;
-      -webkit-border-radius: 8px;
-      border-radius: 4px;
-      font-size: 1.5rem;
-      text-decoration: none;
-      display: inline-block;
-      overflow: visible;
+        .button {
+            padding: 5px 15px;
+            color: #fff;
+            background: #0aa09f;
+            -webkit-border-radius: 8px;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            display: inline-block;
+            overflow: visible;
+            border-width: 5px;
+        }
 
-      border-width: 5px;
-    }
+        .info {
+            font-size: 1.2rem;
+            color: rgb(30, 6, 248);
+        }
 
-    .info {
-      font-size: 1.2rem;
-      color: rgb(30, 6, 248);
-    }
+        .input_label {
+            font-size: 1.45rem;
+        }
 
-    .input_label {
-      font-size: 1.45rem;
-    }
-
-    .help {
-      font-size: 1.2rem;
-    }
-  </style>
+        .help {
+            font-size: 1.28rem;
+        }
+    </style>
 </head>
 
+
 <body>
-  <div class="w3-container" style="  margin: auto; ">
-
-    <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-
-      <div class="w3-center head">
-        <img src="https://i.imgur.com/yxhBPE3.png" title="😎LAZ Aff Link Maker">
-      </div>
-
-      <div class="w3-row w3-section w3-text-teal">
-
-        <div class="w3-col w3-margin-left" style="width:50px">
-          <img src="https://i.imgur.com/Ahld8JX.png" class="imgbg">
-        </div>
-        <div class="w3-col w3-margin-left" style="width:230px">
-          <span class="input_label">ชื่อ Bookamrklet:</span>
-          <input id="title-input" class="w3-input w3-border" type="text" placeholder="ชื่อ Bookamrklet"
-            value="😎LAZAffLinkMaker" oninput="updateTitle()">
+    <div class="w3-card-2 w3-light-grey w3-text-blue w3-margin">
+        <div class="w3-container w3-black w3-center">
+            <img src="https://i.imgur.com/yxhBPE3.png" class="w3-image">
         </div>
 
-        <div class="w3-col w3-margin-left" style="width:50px">
-          <img src="https://i.imgur.com/skXuxpb.png" class="imgbg">
-        </div>
-        <div class="w3-rest">
-          <span class="input_label">Root Link Url:</span>
-          <input id="rootLinkUrl" class="w3-input w3-border" type="text" placeholder="Root Link Url" value=""
-            oninput="updateCode()">
-        </div>
-      </div>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-half">
+                <img src="https://i.imgur.com/Ahld8JX.png" style="width:50px">
+                <span class="input_label">ชื่อ Bookamrklet:</span>
+                <input id="title-input" class="w3-input w3-border" type="text" placeholder="ชื่อ Bookamrklet"
+                    value="😎LAZAffLinkMaker" oninput="updateTitle()">
+            </div>
 
+            <div class="w3-half">
+                <img src="https://i.imgur.com/skXuxpb.png" style="width:50px">
+                <span class="input_label">Root Link Url:</span>
+                <input id="rootLinkUrl" class="w3-input w3-border" type="text" placeholder="Root Link Url" value=""
+                    oninput="updateCode()">
+            </div>
 
-      <div class="w3-row w3-section w3-text-teal">
-        <div class="w3-col w3-margin-left" style="width:50%">
-          Code: <a href="https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js" target="_new"> (Source)</a>
-          <textarea id="code-textarea" disabled></textarea>
-        </div>
-
-        <div class="w3-col w3-margin-left" style="width:50px">
-          <img src="https://i.imgur.com/pF9I490.png" class="imgbg">
         </div>
 
-        <div class="w3-rest">
-          <a id="bookmarklet-a" class="button " href="">bookmarklet</a>
-          <div class="info ">
-            <img src="https://i.imgur.com/33UIReT.png" style="width:100px;margin:10px;">
-            <br>ลากลิงก์ข้างบนนี้ ไปวางที่แถบ Bookmark ของ Browser
+        <div class="w3-row-padding w3-margin-top">
 
-          </div>
-          <img src="https://i.imgur.com/oUrGVXo.gif" style="width:400px">
+            <div class="w3-half">
+                <img src="https://i.imgur.com/pF9I490.png" style="width:50px">
+                <span class="input_label">Bookamrklet Link:</span><br>
+                <a id="bookmarklet-a" class="button " href="">bookmarklet</a>
+                <div class="info ">
+                    <img src="https://i.imgur.com/33UIReT.png" style="width:50px;margin:10px;">
+                    ลากลิงก์ข้างบนนี้ ไปวางที่แถบ Bookmark ของ Browser
+                    <br>
+                    <img src="https://i.imgur.com/oUrGVXo.gif" style="width:400px" class="w3-image">
+                </div>
+            </div>
+
+
+
+            <div class="w3-half">
+                <span class="input_label">Code: <a href="https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js"
+                        target="_new">(Source)</a></span>
+
+                <textarea id="code-textarea" disabled></textarea>
+            </div>
+
+
+
         </div>
-      </div>
     </div>
-  </div>
 
-  <div class="w3-container" style="   margin: auto; ">
-    <div class="w3-container w3-card-4 w3-light-grey  w3-margin">
+    <div class="w3-card-4 w3-light-grey w3-text-black w3-margin">
+        <div class="w3-card-4 ">
+            <header class="w3-container w3-teal">
+                <h3>LAZ Aff Link Maker คืออะไร ?</h3>
+            </header>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">LAZ Aff Link Maker คืออะไร ?</div>
-      <b>LAZ Aff Link Maker</b> คือ Bookmarklet สคริป สำหรับการสร้างลิงค์ affiliate จากเว็บ Lazada
+            <div class="w3-container help">
+                <b>LAZ Aff Link Maker</b> คือ Bookmarklet สคริป สำหรับการสร้างลิงค์ affiliate จากเว็บ Lazada
+            </div>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">การติดตั้ง</div>
-      1. ใส่ชื่อ Bookamrklet<br>
-      2. ใส่ลิงก์ Root Link <br>
-      3. ลากลิงก์ (สีเขียว) ไปวางที่แถบ Bookmark ของ Browser <br>
+            <header class="w3-container w3-teal">
+                <h3>การติดตั้ง</h3>
+            </header>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">การใช้งาน</div>
-      1. ไปที่เว็บ https://www.lazada.co.th/ <br>
-      2. เลือกหน้าสินค้าที่ต้องการโปรโมท <br>
-      3. กดที่ Bookmarklet ที่แถบ Browser <br>
-      4. copy ค่า <b>Your Afﬁliate Link </b> ไปโปรโมท (สามารถนำไปย่อลิงก์ก่อนได้)
+            <div class="w3-container help">
+                1. ใส่ชื่อ Bookamrklet<br>
+                2. ใส่ลิงก์ Root Link<br>
+                3. ลากลิงก์ (สีเขียว) ไปวางที่แถบ Bookmark ของ Browser
+            </div>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">ข้อกำหนด</div>
-      สคริปนี้เป็น Open Source สามารถนำไปดัดแปลงการใช้งานได้ แต่ห้ามทำเพื่อการจำหน่าย
+            <header class="w3-container w3-teal">
+                <h3>การใช้งาน</h3>
+            </header>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">แนวทางในการพัฒนาต่อไป</div>
-      1. เพิ่มส่วนในการติดต่อกับเว็บเซอร์วิช ที่บริการการย่อลิงก์ เช่น https://app.bitly.com/
-      เพื่อให้ย่อลิงก์โดยอัตโนมัติ <br>
-      2. สามารถพัฒนาต่อเป็นส่วนเสริมของโปรแกรม Chrome ได้
+            <div class="w3-container help">
+                1. ไปที่เว็บ https://www.lazada.co.th/<br>
+                2. เลือกหน้าสินค้าที่ต้องการโปรโมท<br>
+                3. กดที่ Bookmarklet ที่แถบ Browser<br>
+                4. copy ค่า <b>Your Afﬁliate Link </b>ไปโปรโมท (สามารถนำไปย่อลิงก์ก่อนได้)
+            </div>
 
-      <div class="w3-panel w3-padding-16 w3-teal help ">ใช้สคริปแล้วมียอด Commission จาก lazada </div>
-      สามารถบริจาคช่วยผู้พัฒนาสคริปนี้ ซื้ออาหารให้ น้องถุงเงิน ได้ที่ G-Wallet ID : 006990025105290 โสมนัส โสมณวัฒน์
-      <div class="w3-container" style="width:300px; overflow: hidden;">
-        <img src="https://i.imgur.com/JqJnyWm.jpg" style="display: block;width: 100%; height: auto;"> 
-      </div>
-      <br>
-      <a href="https://i.imgur.com/tbDoISM.jpg"><img src="https://i.imgur.com/tbDoISM.jpg" style="width:200px;"> </a>
-      <a href="https://i.imgur.com/7jeCqmH.jpg"><img src="https://i.imgur.com/7jeCqmH.jpg" style="width:200px;"></a>
-      <br>
-      😎
+            <header class="w3-container w3-teal">
+                <h3>ข้อกำหนด</h3>
+            </header>
+
+            <div class="w3-container help">
+                สคริปนี้เป็น Open Source สามารถนำไปดัดแปลงการใช้งานได้ แต่ห้ามทำเพื่อการจำหน่าย
+            </div>
+
+            <header class="w3-container w3-teal">
+                <h3>แนวทางในการพัฒนาต่อไป</h3>
+            </header>
+
+            <div class="w3-container help">
+                1. เพิ่มส่วนในการติดต่อกับเว็บเซอร์วิช ที่บริการการย่อลิงก์ เช่น https://app.bitly.com/
+                เพื่อให้ย่อลิงก์โดยอัตโนมัติ<br>
+                2. สามารถพัฒนาต่อเป็นส่วนเสริมของโปรแกรม Chrome ได้
+            </div>
+
+            <header class="w3-container w3-teal">
+                <h3>ถ้าใช้สคริปแล้วมียอด Commission จาก lazada</h3>
+            </header>
+
+            <div class="w3-container help">
+                สามารถบริจาคช่วยผู้พัฒนาสคริปนี้ ซื้ออาหารให้ น้องถุงเงิน ได้ที่ G-Wallet ID : 006990025105290 โสมนัส
+                โสมณวัฒน์<br>
+                <a href="https://i.imgur.com/JqJnyWm.jpg" target="_new"><img src="https://i.imgur.com/JqJnyWm.jpg" width="200px"></a>
+                <a href="https://i.imgur.com/tbDoISM.jpg" target="_new"><img src="https://i.imgur.com/tbDoISM.jpg"
+                        style="width:200px;"> </a>
+                <a href="https://i.imgur.com/7jeCqmH.jpg" target="_new"><img src="https://i.imgur.com/7jeCqmH.jpg"
+                        style="width:200px;"></a>
+                <br>
+                😎
+            </div>
+
+        </div>
     </div>
-  </div>
 
+    <footer class="w3-container w3-blue">
+        <h5>LAZ Aff link Maker version 2.0 ©️ by Mr.Sommanat "maewDev" 😎</h5>
+    </footer>
 
-  <script>
-    var mainCode = ""; /* Global variable */
-    const l_script_url = "https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js";
-    fetch(l_script_url)
-      .then(
-        (successResponse) => {
-          if (successResponse.status != 200) {
-            return null;
-          } else {
-            return successResponse.text();
-          }
-        },
-        (failResponse) => {
-          return null;
+    <script>
+        var mainCode = ""; /* Global variable */
+        const l_script_url = "https://maewdev.github.io/maewDev/LAZAffLinkMaker/LALM.js";
+        fetch(l_script_url)
+            .then(
+                (successResponse) => {
+                    if (successResponse.status != 200) {
+                        return null;
+                    } else {
+                        return successResponse.text();
+                    }
+                },
+                (failResponse) => {
+                    return null;
+                }
+            )
+            .then((result) => {
+                document.getElementById("code-textarea").innerHTML = result;
+                mainCode = result;
+                updateCode();
+            });
+
+        updateTitle();
+
+        function isValidURL(string) {
+            let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+            return (res !== null)
+        };
+
+        function updateTitle() {
+            let title = document.getElementById("title-input").value.trim();
+            let link = document.getElementById("bookmarklet-a");
+            link.text = title;
         }
-      )
-      .then((result) => {
-        document.getElementById("code-textarea").innerHTML = result;
-        mainCode = result;
-        updateCode();
-      });
 
-    updateTitle();
+        function updateCode() {
+            let code = document.getElementById("code-textarea");
+            let link = document.getElementById("bookmarklet-a");
+            let rootLinkUrl = document.getElementById("rootLinkUrl").value.trim();
+            let rootLink = isValidURL(rootLinkUrl) ? rootLinkUrl : "";
 
-    function isValidURL(string) {
-      let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-      return (res !== null)
-    };
-
-    function updateTitle() {
-      let title = document.getElementById("title-input").value.trim();
-      let link = document.getElementById("bookmarklet-a");
-      link.text = title;
-    }
-
-    function updateCode() {
-      let code = document.getElementById("code-textarea");
-      let link = document.getElementById("bookmarklet-a");
-      let rootLinkUrl = document.getElementById("rootLinkUrl").value.trim();
-      let rootLink = isValidURL(rootLinkUrl) ? rootLinkUrl : "";
-
-      let fin_code = mainCode.replace('const myAffRootLink = "";', 'const myAffRootLink ="' + rootLink + '";');
-      code.innerHTML = fin_code;
-      /* let output = "javascript:" + encodeURIComponent("(function(){" + fin_code + "})();"); */
-      let output = "javascript:" + ("(function(){ \n" + fin_code + "})();");
-      code.innerHTML = output;
-      link.href = output;
-      console.log(fin_code)
-    }
-  </script>
-  <!-- Default Statcounter code for lazafflinkmaker https://maewdev.netlify.app/lazafflinkmaker -->
-  <script type="text/javascript">
-    var sc_project = 12561314;
-    var sc_invisible = 1;
-    var sc_security = "3679390e";
-  </script>
-  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript>
-    <div class="statcounter"><a title="web statistics" href="https://statcounter.com/" target="_blank"><img
-          class="statcounter" src="https://c.statcounter.com/12561314/0/3679390e/1/" alt="web statistics"></a></div>
-  </noscript>
-  <!-- End of Statcounter Code -->
+            let fin_code = mainCode.replace('const myAffRootLink = "";', 'const myAffRootLink ="' + rootLink + '";');
+            code.innerHTML = fin_code;
+            /* let output = "javascript:" + encodeURIComponent("(function(){" + fin_code + "})();"); */
+            let output = "javascript:" + ("(function(){ \n" + fin_code + "})();");
+            code.innerHTML = output;
+            link.href = output;
+            console.log(fin_code)
+        }
+    </script>
 </body>
 
 </html>
